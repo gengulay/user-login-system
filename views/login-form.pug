@@ -1,0 +1,14 @@
+extends layout
+
+block content
+
+  h2.page-header Log In
+  p please log in below
+  form(action='/users/login', method='post', encpart='multipart/form-data')
+      .form-group
+        label(for='userName') Username:
+        input#username.form-control(name='userName', type='text', placeholder='enter username')
+      .form-group
+        label(for='pwd') Password:
+        input#userpwd.form-control(type='password', placeholder='type your password here')
+      button.btn.btn-primary(name='submit', type='submit', value='Login') Login

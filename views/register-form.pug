@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+  form(action='/users/register', method='post', enctype="multipart/form-data")
+    .form-group
+      label(for='fullName') Full Name:
+      input#fullname.form-control(name='fullName', type='text', placeholder='enter full name here')
+    .form-group
+      label(for='email') Email address:
+      input#useremail.form-control(name='userEmail', type='email', placeholder='enter username here')
+    .form-group
+      label(for='userName') Username:
+      input#username.form-control(name='userName', type='text', placeholder='enter username')
+    .form-group
+      label(for='pwd') Password:
+      input#userpwd.form-control(type='password', name='userPwd')
+    .form-group
+      label(for='confirmPwd') Confirm Password:
+      input#confirmpwd.form-control(type='password', name='userConfirmPwd')
+    .form-group
+      label(for='profileImage') Profile Image:
+      input.form-control(type='file', name='userImage')
+    button.btn.btn-primary(name='submit', type='submit', value='Register') Submit
