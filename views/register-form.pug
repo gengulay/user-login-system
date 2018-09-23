@@ -1,7 +1,9 @@
 extends layout
 
 block content
-
+  if errors
+    each error, i in errors
+      .alert.alert-danger #{error.msg}
   form(action='/users/register', method='post', enctype="multipart/form-data")
     .form-group
       label(for='fullName') Full Name:
@@ -20,5 +22,5 @@ block content
       input#confirmpwd.form-control(type='password', name='userConfirmPwd')
     .form-group
       label(for='profileImage') Profile Image:
-      input.form-control(type='file', name='userImage')
+      input.form-control(type='file', name='imageProfile')
     button.btn.btn-primary(name='submit', type='submit', value='Register') Submit
